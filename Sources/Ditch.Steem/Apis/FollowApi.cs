@@ -20,9 +20,9 @@ namespace Ditch.Steem
         /// <param name="token">Throws a <see cref="T:System.OperationCanceledException" /> if this token has had cancellation requested.</param>
         /// <returns>API type: get_followers_return</returns>
         /// <exception cref="T:System.OperationCanceledException">The token has had cancellation requested.</exception>
-        public Task<JsonRpcResponse<GetFollowersReturn>> GetFollowersAsync(GetFollowersArgs args, CancellationToken token)
+        public Task<JsonRpcResponse<GetFollowersReturn[]>> GetFollowersAsync(GetFollowersArgs args, CancellationToken token)
         {
-            return CustomGetRequestAsync<GetFollowersReturn>(KnownApiNames.FollowApi, "get_followers", args, token);
+            return CustomGetRequestAsync<GetFollowersReturn[]>(KnownApiNames.FollowApi, "get_followers", args, token);
         }
 
         /// <summary>
@@ -129,9 +129,9 @@ namespace Ditch.Steem
         /// <param name="token">Throws a <see cref="T:System.OperationCanceledException" /> if this token has had cancellation requested.</param>
         /// <returns>API type: get_reblogged_by_return</returns>
         /// <exception cref="T:System.OperationCanceledException">The token has had cancellation requested.</exception>
-        public Task<JsonRpcResponse<GetRebloggedByReturn>> GetRebloggedByAsync(GetRebloggedByArgs args, CancellationToken token)
+        public Task<JsonRpcResponse<string[]>> GetRebloggedByAsync(GetRebloggedByArgs args, CancellationToken token)
         {
-            return CustomGetRequestAsync<GetRebloggedByReturn>(KnownApiNames.FollowApi, "get_reblogged_by", args, token);
+            return CustomGetRequestAsync<string[]>(KnownApiNames.FollowApi, "get_reblogged_by", args, token);
         }
 
 

@@ -9,13 +9,11 @@ namespace Ditch.Steem.Models
     [JsonObject(MemberSerialization.OptIn)]
     public class GetFollowersReturn
     {
-
-        /// <summary>
-        /// API name: followers
-        /// 
-        /// </summary>
-        /// <returns>API type: api_follow_object</returns>
-        [JsonProperty("followers")]
-        public ApiFollowObject[] Followers {get; set;}
+        [JsonProperty("what")]
+        public string[] What { get; set; }
+        [JsonProperty("following")]
+        public string Following { get; set; }
+        [JsonProperty("follower")]
+        public string Follower { get; set; }
     }
 }

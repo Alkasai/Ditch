@@ -58,9 +58,9 @@ namespace Ditch.Steem
         /// <param name="token">Throws a <see cref="T:System.OperationCanceledException" /> if this token has had cancellation requested.</param>
         /// <returns>API type: get_content_replies_return</returns>
         /// <exception cref="T:System.OperationCanceledException">The token has had cancellation requested.</exception>
-        public Task<JsonRpcResponse<GetContentRepliesReturn>> GetContentRepliesAsync(GetContentRepliesArgs args, CancellationToken token)
+        public Task<JsonRpcResponse<GetContentRepliesReturn[]>> GetContentRepliesAsync(GetContentRepliesArgs args, CancellationToken token)
         {
-            return CustomGetRequestAsync<GetContentRepliesReturn>(KnownApiNames.TagsApi, "get_content_replies", args, token);
+            return CustomGetRequestAsync<GetContentRepliesReturn[]>(KnownApiNames.TagsApi, "get_content_replies", args, token);
         }
 
         /// <summary>
